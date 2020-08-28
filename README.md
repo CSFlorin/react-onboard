@@ -95,12 +95,12 @@ export default function App() {
 
 ### OnboardProvider
 
-| Prop               | Type                                                                        | Default | Description                                                                                                          |
-| ------------------ | --------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
-| messages           | Array<{id: string, elementIds?: Array\<string>, children: React.ReactNode}> | -       | Onboard messages optionally highlighting related elements                                                            |
-| showCallback       | ({messageId: string, children: React.ReactNode, onAck: () => void}) => void | -       | Function to call when a message is made active (This is where you actually show the message how you want)            |
-| ackCallback        | ({messageId: string}) => void                                               | -       | Function to call when a message is acknowledged (This is where you hide the message you previously showed)           |
-| HighlightComponent | React.FC                                                                    | -       | A functional component that is wrapped around and draws visual attention to elements that are related to the message |
+| Prop               | Type                                                                                        | Default | Description                                                                                                          |
+| ------------------ | ------------------------------------------------------------------------------------------- | ------- | -------------------------------------------------------------------------------------------------------------------- |
+| messages           | Array<{id: string, elementIds?: Array\<string>, children: React.ReactNode, delay?: number}> | -       | Onboard messages optionally highlighting related elements                                                            |
+| showCallback       | ({messageId: string, children: React.ReactNode, onAck: () => void}) => void                 | -       | Function to call when a message is made active (This is where you actually show the message how you want)            |
+| ackCallback        | ({messageId: string}) => void                                                               | -       | Function to call when a message is acknowledged (This is where you hide the message you previously showed)           |
+| HighlightComponent | React.FC                                                                                    | -       | A functional component that is wrapped around and draws visual attention to elements that are related to the message |
 
 ### OnboardElement
 
