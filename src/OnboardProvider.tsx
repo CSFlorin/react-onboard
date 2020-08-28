@@ -49,7 +49,7 @@ const useOnboardProvider = (
     if (activeMessage === null && !didCancel) {
       messages
         .filter(({ id }) => !messagesAcked.includes(id))
-        .some(({ id, children, elementIds }) => {
+        .some(({ id, children, elementIds, delay }) => {
           const unrenderedElements = elementIds?.filter(
             (elementId) => !renderedElements.includes(elementId)
           )
@@ -58,7 +58,10 @@ const useOnboardProvider = (
             unrenderedElements === undefined ||
             unrenderedElements.length === 0
           ) {
-            setActiveMessage({ id, elementIds, children })
+            setTimeout(
+              () => setActiveMessage({ id, elementIds, children }),
+              delay ?? 0
+            )
             return true
           }
           return false

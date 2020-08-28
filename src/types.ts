@@ -9,6 +9,7 @@ export interface Message extends Item {
   // Array of names of onboard elements to highlight when message is shown
   readonly elementIds?: Array<string>
   readonly children: ReactNode
+  readonly delay?: number
 }
 
 export interface OnboardContext {

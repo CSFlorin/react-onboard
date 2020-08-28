@@ -40,7 +40,7 @@ export const OnboardElement: FC<OnboardElementProps> = ({
 
   const newChildren = cloneElement(children as any, {
     ...(children as any).props,
-    style: { visibility: 'visible', ...(children as any).props.style }
+    style: { visibility: 'initial', ...(children as any).props.style }
   })
 
   return (
